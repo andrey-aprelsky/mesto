@@ -1,0 +1,8 @@
+.profile__info-zone {
+  min-width: 336px;
+  max-height: 73px;
+  margin-left: 40px;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
