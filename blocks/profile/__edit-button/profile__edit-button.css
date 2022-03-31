@@ -7,3 +7,8 @@
   margin-left: 18px;
   margin-top: 15px;
 }
+.profile__edit-button:hover {
+  opacity: .7;
+  transition: 1s;
+  cursor: pointer;
+}
