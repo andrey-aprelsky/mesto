@@ -7,7 +7,7 @@
   border: 0;
   margin-left: 18px;
   margin-top: 10px;
-  background-image: url(../../../images/profile/EditButton1.svg)
+  background-image: url(../../../images/profile/EditButton1.svg);
 }
 .profile__edit-button:hover {
   opacity: .7;
