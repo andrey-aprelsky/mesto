@@ -1,0 +1,20 @@
+.form {
+  width:100%;
+  max-width: 430px;
+  min-height: 330px;
+  background-color: #fff;
+  border-radius: 10px;
+  position: fixed;
+  left: 425px;
+  top: 195px;
+  opacity: 1;
+  z-index: 1;
+}
+@media (max-width: 1024px) {
+  .form {
+    max-width: 282px;
+    min-height: 330px;
+    left:19px;
+    top:123px;
+  }
+}

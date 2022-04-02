@@ -1,0 +1,26 @@
+.form-container__close-button {
+  position: absolute;
+  min-width: 32px;
+  min-height: 32px;
+  left: 863px;
+  top: 155px;
+  background-color: #000;
+  padding: 0;
+  border: 0;
+  background-image: url(../../../images/form/CloseIcon.svg);
+  background-repeat: none;
+}
+.form-container__close-button:hover {
+  opacity: 0.6;
+  transition: 1s;
+  cursor: pointer;
+}
+@media (max-width: 1024px) {
+  .form-container__close-button {
+    min-width: 20px;
+    min-height: 20px;
+    left: 281px;
+    top: 87px;
+    background-image: url(../../../images/form/CloseIcon320.svg);
+  }
+}

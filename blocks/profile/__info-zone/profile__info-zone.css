@@ -1,8 +1,17 @@
 .profile__info-zone {
-  min-width: 336px;
+  max-width: 336px;
   max-height: 73px;
   margin-left: 40px;
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
+}
+@media (max-width: 1024px) {
+  .profile__info-zone {
+    min-width: 282px;
+    align-items: center;
+    align-content: center;
+    margin-left: 0;
+    margin-top: 26px;
+  }
 }

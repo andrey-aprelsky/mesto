@@ -14,19 +14,17 @@
     <a href="#" class="link">
       <img src="./images/header/__logo.svg" alt="Логотип" class="logo">
     </a>
-  </header>  
+  </header>
   <main class="content">
     <section class="profile">
       <img src="./images/profile/boshka.jpg" alt="Лицо" class="profile__image">
       <div class="profile__info-zone">
         <h1 class="profile__title">Жак-Ив Кусто</h1>
         <p class="profile__subtitle">Исследователь океана</p>
-        <button class="profile__edit-button">
-           <img src="./images/profile/EditButton1.svg" alt="Кнопка" class="profile__button-image">
+        <button class="profile__edit-button" type="button">
         </button>
       </div>
       <button class="profile__add-button">
-        <img src="./images/profile/EditButton2.svg" alt="Кнопка" class="profile__button-image">
       </button>
     </section>
     <section class="elements">
@@ -80,7 +78,7 @@
       <article class="element">
         <img src="./images/elements/karach.jpg" alt="фото карачаевск" class="element__image">
         <div class="element__title-zone">
-          <h2 class="element__title">Карачаевск</h2>
+          <h2 class="element__title">Карачаевск-Черккеск</h2>
           <button class="element__like">
             <img src="./images/elements/like.svg" alt="like" class="element__like-img">
           </button>
@@ -90,8 +88,22 @@
     <section class="footer">
       <h2 class="footer__title">© 2020 Mesto Russia</h2>
     </section>
+    <div class="overlay">
+      <div class="form-container">
+        <form action="" class="form">
+          <h2 class="form__title">Редактировать профиль</h2>
+          <input type="text" name="name" value="Жак-Ив Кусто" class="form__input-name">
+          <input type="text" name="description" value="Исследователь океана" class="form__input-description">
+          <button class="form__save-button" type="submit">
+          </button>
+        </form>
+        <button class="form-container__close-button" type="button">
+        </button>
+      </div>
+    </div>
   </main>
 
+  <script src="./scripts/index.js"></script>
 </body>
 
 </html>
