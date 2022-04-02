@@ -13,7 +13,7 @@
   transition: 1s;
   cursor: pointer;
 }
-@media (max-width: 1024px) {
+@media (max-width: 1023px) {
   .form__save-button {
     max-width: 238px;
     min-height: 46px;

@@ -7,7 +7,7 @@
   border-bottom: 1px solid rgba(0, 0, 0, .2);
   outline: none;
 }
-@media (max-width: 1024px) {
+@media (max-width: 1023px) {
   .form__input-name {
     min-width: 238px;
     min-height: 27px;

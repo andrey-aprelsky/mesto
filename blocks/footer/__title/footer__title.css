@@ -1,5 +1,5 @@
 .footer__title {
-  max-width: 318px;
+  min-width: 318px;
   font-style: normal;
   font-weight: 400;
   font-size: 18px;
@@ -8,10 +8,10 @@
   margin: 66px 762px 60px 200px;
 }
 
-@media (max-width: 1024px) {
+@media (max-width: 1023px) {
   .footer__title {
     font-size: 14px;
-    max-width: 282px;
+    min-width: 282px;
     line-height: 17px;
     margin: 48px 19px 36px 19px;
   }

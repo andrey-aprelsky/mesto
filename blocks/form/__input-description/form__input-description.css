@@ -7,7 +7,7 @@
   border: none;
   border-bottom: 1px solid rgba(0, 0, 0, .2);
 }
-@media (max-width: 1024px) {
+@media (max-width: 1023px) {
   .form__input-description {
     min-width: 238px;
     min-height: 27px;

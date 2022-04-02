@@ -6,7 +6,7 @@
   flex-direction: column;
   flex-wrap: wrap;
 }
-@media (max-width: 1024px) {
+@media (max-width: 1023px) {
   .profile__info-zone {
     min-width: 282px;
     align-items: center;

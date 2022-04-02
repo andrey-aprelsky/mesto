@@ -14,7 +14,7 @@
   transition: 1s;
   cursor: pointer;
 }
-@media (max-width: 1024px) {
+@media (max-width: 1023px) {
   .profile__edit-button {
     min-width: 18px;
     max-height: 18px;
