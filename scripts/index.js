@@ -3,10 +3,10 @@ const overlay = document.querySelector(".popup");
 const closeOverlay = document.querySelector(".popup__close-button");
 const form = document.querySelector(".popup__form");
 
-const nameInput = document.querySelector(".popup__input_name");
+const nameInput = document.querySelector(".popup__input_type_name");
 const title = document.querySelector(".profile__title");
 
-const descriptionInput = document.querySelector(".popup__input_description");
+const descriptionInput = document.querySelector(".popup__input_type_description");
 const description = document.querySelector(".profile__subtitle");
 
 function openOverlay() {
@@ -15,7 +15,7 @@ function openOverlay() {
   descriptionInput.value = description.textContent;
 }
 
-function close() {
+function closePopup() {
   overlay.classList.remove("popup_is-active");
 }
 
@@ -24,11 +24,11 @@ function formSubmitHandler(e) {
   title.textContent = nameInput.value;
   description.textContent = descriptionInput.value;
 
-  close()
+  closePopup()
 }
 
 editButton.addEventListener("click", openOverlay);
 
-closeOverlay.addEventListener("click",close);
+closeOverlay.addEventListener("click",closePopup);
 
 form.addEventListener("submit", formSubmitHandler);

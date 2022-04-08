@@ -9,9 +9,10 @@
 @media (max-width: 1023px) {
   .profile__info-zone {
     min-width: 282px;
+    max-height: 64px;
     align-items: center;
     align-content: center;
-    margin-left: 0;
+    margin-left: 30px;
     margin-top: 26px;
   }
 }

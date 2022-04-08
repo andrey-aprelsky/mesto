@@ -7,7 +7,7 @@
 @media (max-width: 1023px) {
   .profile {
     max-width: 282px;
-    min-height: 286px;
+    max-height: 286px;
     flex-direction: column;
     margin: 42px 19px 0;
   }
