@@ -1,0 +1,24 @@
+.popup__close-button {
+  min-width: 32px;
+  min-height: 32px;
+  padding: 0;
+  border: 0;
+  background: transparent url(../../../images/form/CloseIcon.svg) center no-repeat;
+  background-repeat: none;
+  margin-top: -380px;
+  margin-right: -470px;
+}
+.popup__close-button:hover {
+  opacity: 0.6;
+  transition: 1s;
+  cursor: pointer;
+}
+@media (max-width: 1023px) {
+  .popup__close-button {
+    min-width: 20px;
+    min-height: 20px;
+    background: transparent url(../../../images/form/CloseIcon320.svg) center no-repeat;
+    margin-right: -260px;
+    margin-top: -355px;
+  }
+}

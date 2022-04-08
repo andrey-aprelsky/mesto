@@ -1,5 +1,6 @@
 .element__title-zone {
-  min-height: 75px;
+  padding-top: 25px;
+  padding-bottom: 31px;
   background-color: white;
   display: flex;
   align-items: center;

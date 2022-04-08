@@ -1,0 +1,23 @@
+.popup__save-button {
+  width: 100%;
+  max-width: 358px;
+  min-height: 50px;
+  padding: 0;
+  border: 0;
+  margin: 48px 36px 37px 36px;
+  border-radius: 2px;
+  background-image: url(../../../../images/form/SubmitButton.svg);
+}
+.popup__save-button:hover {
+  opacity: .5;
+  transition: 1s;
+  cursor: pointer;
+}
+@media (max-width: 1023px) {
+  .popup__save-button {
+    max-width: 238px;
+    min-height: 46px;
+    background-image: url(../../../../images/form/SubmitButton320.svg);
+    margin: 45px 22px 25px 22px;
+  }
+}
