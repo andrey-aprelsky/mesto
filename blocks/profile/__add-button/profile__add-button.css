@@ -17,7 +17,7 @@
   .profile__add-button {
     max-width: 282px;
     margin: 0;
-    margin-top: 36px;
+    margin-top: 33px;
     background-image: url(../../../images/profile/AddButton.svg);
   }
 }

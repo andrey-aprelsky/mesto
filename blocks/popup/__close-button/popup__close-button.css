@@ -5,8 +5,8 @@
   border: 0;
   background: transparent url(../../../images/form/CloseIcon.svg) center no-repeat;
   background-repeat: none;
-  margin-top: -380px;
-  margin-right: -470px;
+  margin-top: -370px;
+  margin-right: -475px;
 }
 .popup__close-button:hover {
   opacity: 0.6;
