@@ -4,7 +4,7 @@
   padding: 0;
   margin: 0;
   border: 0;
-  background-color: #fff;
+  background-color: transparent;
   margin-right: 20px;
   background-image: url(../../../images/elements/like.svg);
 }
@@ -12,8 +12,4 @@
   opacity: .5;
   transition: 1s;
   cursor: pointer;
-}
-.element__like:active {
-  background-color: black;
-  transition: none;
 }
