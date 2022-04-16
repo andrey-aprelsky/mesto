@@ -1,0 +1,15 @@
+.element__like_is-active {
+  min-width: 22px;
+  min-height: 19px;
+  padding: 0;
+  margin: 0;
+  border: 0;
+  background-color: transparent;
+  margin-right: 20px;
+  background-image: url(../../../../images/elements/union.svg);
+}
+.element__like_is-active:hover {
+  opacity: 0.5;
+  transition: 1s;
+  cursor: pointer;
+}

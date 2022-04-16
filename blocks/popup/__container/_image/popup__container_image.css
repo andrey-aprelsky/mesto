@@ -1,0 +1,13 @@
+.popup__container_image {
+  max-width: 816px;
+  margin: 90px auto 0;
+  background-color: transparent;
+  position: relative;
+}
+@media (max-width: 1023px) {
+  .popup__container_image{
+    max-width: 282px;
+    min-height: 0;
+    margin-left: 40px;
+  }
+}
