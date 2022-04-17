@@ -25,9 +25,9 @@ const initialCards = [
   },
 ];
 const editButton = document.querySelector(".profile__edit-button");
-const overlay = document.querySelector(".popup");
-const closeOverlay = document.querySelector(".popup__close-button");
-const form = document.querySelector(".popup__form");
+const popupProfile = document.querySelector(".popup_profile");
+const profileCloseBtn = document.querySelector(".popup__close-button");
+const profileForm = document.querySelector(".popup__form_profile");
 const nameInput = document.querySelector(".popup__input_type_name");
 const title = document.querySelector(".profile__title");
 const descriptionInput = document.querySelector(".popup__input_type_description");
@@ -38,7 +38,7 @@ const addPopup = document.querySelector(".popup_add");
 const closePopupAdd = document.querySelector(".popup__close-button_add");
 const inputAdressName = document.querySelector(".popup__input_type_adress-name");
 const inputAdress = document.querySelector(".popup__input_type_adress");
-const savePopupAdd = document.querySelector(".popup__form_res");
+const addCardForm = document.querySelector(".popup__form_res");
 
 const initialCardsContainer = document.querySelector(".elements");
 const template = document.querySelector(".template");
@@ -69,19 +69,13 @@ function getElement(item) {
   elementUrl.addEventListener("click", handleOpenImage);
 
   elementTitle.textContent = item.name;
+  elementUrl.alt = item.name;
   elementUrl.src = item.link;
 
   
-  inputAdressName.textContent = elementTitle.textContent;
-  inputAdress.textContent = elementUrl.src;
-
-  popSub.textContent = elementTitle.textContent;
-  popImg.src = elementUrl.src;
-  
-  
   function handleOpenImage(evt) {
     evt.preventDefault();
-    opnPopImg.classList.add("popup_open-image_is-active");
+    openPopup(opnPopImg);
     popSub.textContent = elementTitle.textContent;
     popImg.src = elementUrl.src;
   }
@@ -89,37 +83,43 @@ function getElement(item) {
   return getElementTemplate;
 }
 
-
 function handleLike(e) {
   const currentLike = e.target;
   currentLike.classList.toggle("element__like_is-active");
 }
-
 
 function removeElement(e) {
   const currentButton = e.target;
   currentButton.closest(".element").remove();
 }
 
-function openOverlay() {
-  overlay.classList.add("popup_is-active");
+function openPopup(popup) {
+  popup.classList.add("popup_is-active");
+}
+
+function closePopup(popup) {
+  popup.classList.remove("popup_is-active");
+}
+
+function openPopupProfile() {
+  openPopup(popupProfile);
   nameInput.value = title.textContent;
   descriptionInput.value = description.textContent;
 }
 
-function closePopup() {
-  overlay.classList.remove("popup_is-active");
+function closePopupProfile() {
+  closePopup(popupProfile);
 }
 
-function formSubmitHandler(e) {
+function handleProfileFormSubmit() {
   e.preventDefault();
   title.textContent = nameInput.value;
   description.textContent = descriptionInput.value;
 
-  closePopup();
+  closePopupProfile();
 }
 
-function handleCardAdd(e) {
+function handleCardFormSubmit(e) {
   e.preventDefault();
 
   initialCardsContainer.prepend(getElement({ name: inputAdressName.value, link: inputAdress.value }));
@@ -127,37 +127,36 @@ function handleCardAdd(e) {
 
   closeAddPopup();
   
-  savePopupAdd.reset();
+  addCardForm.reset();
 
 }
 
-
 function openAddPopup() {
-  addPopup.classList.add("popup_add_is-active");
+  openPopup(addPopup);
 }
 
 function closeAddPopup() {
-  addPopup.classList.remove("popup_add_is-active");
+  closePopup(addPopup);
 }
+
 function closeImgPopup() {
-  opnPopImg.classList.remove("popup_open-image_is-active");
+  closePopup(opnPopImg);
 }
 
 
 render();
 
 
-editButton.addEventListener("click", openOverlay);
+editButton.addEventListener("click", openPopupProfile);
 
-closeOverlay.addEventListener("click", closePopup);
+profileCloseBtn.addEventListener("click", closePopupProfile);
 
-form.addEventListener("submit", formSubmitHandler);
-
+profileForm.addEventListener("submit", handleProfileFormSubmit);
 
 addButton.addEventListener("click", openAddPopup);
 
 closePopupAdd.addEventListener("click", closeAddPopup);
 
-savePopupAdd.addEventListener("submit", handleCardAdd);
+addCardForm.addEventListener("submit", handleCardFormSubmit);
 
 clsPopImg.addEventListener("click", closeImgPopup);
