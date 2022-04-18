@@ -78,6 +78,7 @@ function getElement(item) {
     openPopup(opnPopImg);
     popSub.textContent = elementTitle.textContent;
     popImg.src = elementUrl.src;
+    popImg.alt = elementTitle.textContent;
   }
 
   return getElementTemplate;
@@ -111,7 +112,7 @@ function closePopupProfile() {
   closePopup(popupProfile);
 }
 
-function handleProfileFormSubmit() {
+function handleProfileFormSubmit(e) {
   e.preventDefault();
   title.textContent = nameInput.value;
   description.textContent = descriptionInput.value;
