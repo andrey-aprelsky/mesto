@@ -37,9 +37,29 @@
     <div class="popup popup_profile">
       <div class="popup__container">
         <h2 class="popup__title">Редактировать профиль</h2>
-        <form class="popup__form popup__form_profile" name="popupname">
-          <input type="text" name="name" value="" class="popup__input popup__input_type_name">
-          <input type="text" name="description" value="" class="popup__input popup__input_type_description">
+        <form class="popup__form popup__form_profile" name="popupname" novalidate>
+          <input
+            required
+            minlength="2"
+            maxlength="40" 
+            id="name-input"
+            type="text" 
+            name="name" 
+            value="" 
+            class="popup__input popup__input_type_name"
+            >
+            <span class="popup__input-error" id="name-input-error"></span>
+          <input 
+            required
+            minlength="2"
+            maxlength="200"
+            id="description-input"
+            type="text" 
+            name="description" 
+            value="" 
+            class="popup__input popup__input_type_description"
+            >
+            <span class="popup__input-error" id="description-input-error"></span>
           <button class="popup__save-button" type="submit">
           </button>
         </form>
@@ -50,11 +70,29 @@
     <div class="popup popup_add">
       <div class="popup__container">
         <h2 class="popup__title">Новое место</h2>
-        <form class="popup__form popup__form_res" name="popupname">
-          <input type="text" name="adress-name" value="" class="popup__input popup__input_type_adress-name"
-            placeholder="Название">
-          <input type="url" name="adress" value="" class="popup__input popup__input_type_adress"
-            placeholder="Ссылка на картинку">
+        <form class="popup__form popup__form_res" name="popupname" novalidate>
+          <input 
+            required
+            minlength="2"
+            maxlength="30"
+            id="adress-name-input" 
+            type="text" 
+            name="adress-name" 
+            value="" 
+            class="popup__input popup__input_type_adress-name"
+            placeholder="Название"
+            >
+            <span class="popup__input-error" id="adress-name-input-error"></span>
+          <input
+            required 
+            id="adress-input"
+            type="url" 
+            name="adress" 
+            value="" 
+            class="popup__input popup__input_type_adress"
+            placeholder="Ссылка на картинку"
+            >
+            <span class="popup__input-error" id="adress-input-error"></span>
           <button class="popup__save-button popup__save-button_add" type="submit">
           </button>
         </form>
@@ -84,6 +122,7 @@
     </article>
   </template>
   <script src="./scripts/index.js"></script>
+  <script src="./scripts/validate.js"></script>
 </body>
 
 </html>

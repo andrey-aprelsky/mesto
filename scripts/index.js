@@ -24,6 +24,8 @@ const initialCards = [
     link: "https://pictures.s3.yandex.net/frontend-developer/cards-compressed/baikal.jpg",
   },
 ];
+
+const popupOverlay = document.querySelector(".popup");
 const editButton = document.querySelector(".profile__edit-button");
 const popupProfile = document.querySelector(".popup_profile");
 const profileCloseBtn = document.querySelector(".popup__close-button");
@@ -94,11 +96,21 @@ function removeElement(e) {
   currentButton.closest(".element").remove();
 }
 
+function handleEscUp(evt) {
+  evt.preventDefault();
+  if (evt.keyCode === 27) {
+    const activePopup = document.querySelector('.popup_is-active');
+    closePopup(activePopup);
+  }
+};
+
 function openPopup(popup) {
+  document.addEventListener('keyup', handleEscUp);
   popup.classList.add("popup_is-active");
 }
 
 function closePopup(popup) {
+  document.removeEventListener('keyup', handleEscUp);
   popup.classList.remove("popup_is-active");
 }
 
@@ -147,7 +159,6 @@ function closeImgPopup() {
 
 render();
 
-
 editButton.addEventListener("click", openPopupProfile);
 
 profileCloseBtn.addEventListener("click", closePopupProfile);
@@ -161,3 +172,22 @@ closePopupAdd.addEventListener("click", closeAddPopup);
 addCardForm.addEventListener("submit", handleCardFormSubmit);
 
 clsPopImg.addEventListener("click", closeImgPopup);
+
+opnPopImg.addEventListener("click", (evt) => {
+  if (evt.target.classList.contains('popup_open-image') || evt.target.classList.contains('popup__close-button_image')) {
+    closeImgPopup();
+  }
+});
+
+addPopup.addEventListener("click", (evt) => {
+  if (evt.target.classList.contains('popup_add') || evt.target.classList.contains('popup__close-button_add')) {
+    closeAddPopup();
+  }
+});
+
+popupOverlay.addEventListener("click", (evt) => {
+  if (evt.target.classList.contains('popup') || evt.target.classList.contains('popup__close-button')) {
+    closePopupProfile();
+  }
+});
+  
