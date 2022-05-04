@@ -1,8 +1,15 @@
 .popup__save-button_disabled {
-  opacity: .2;
+  opacity: 1;
   cursor: default;
+  background-image: url(../../../../images/form/SubmitButtonInactive.svg);
+  
 }
 .popup__save-button_disabled:hover {
-  opacity: .2;
+  opacity: 1;
   cursor: default;
+}
+@media (max-width: 1023px) {
+  .popup__save-button_disabled {
+    background-image: url(../../../../images/form/SubmitButtonInactive320.svg);
+  }
 }

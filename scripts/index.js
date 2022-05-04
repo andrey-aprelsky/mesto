@@ -26,7 +26,7 @@ const initialCards = [
 ];
 
 const popupOverlay = document.querySelector(".popup");
-const editButton = document.querySelector(".profile__edit-button");
+const buttonEdit = document.querySelector(".profile__edit-button");
 const popupProfile = document.querySelector(".popup_profile");
 const profileCloseBtn = document.querySelector(".popup__close-button");
 const profileForm = document.querySelector(".popup__form_profile");
@@ -98,7 +98,7 @@ function removeElement(e) {
 
 function handleEscUp(evt) {
   evt.preventDefault();
-  if (evt.keyCode === 27) {
+  if (evt.key === 'Escape') {
     const activePopup = document.querySelector('.popup_is-active');
     closePopup(activePopup);
   }
@@ -156,10 +156,24 @@ function closeImgPopup() {
   closePopup(opnPopImg);
 }
 
+const onOverlayClick = () => {
+  const popupList = Array.from(document.querySelectorAll('.popup'));
+
+  popupList.forEach((Element) => {
+   Element.addEventListener('click', (evt) => {
+    if (evt.target.classList.contains('popup') || evt.target.classList.contains('popup__close-button')) {
+      closePopup(evt.target)
+    }
+    
+  });
+});
+}
 
 render();
 
-editButton.addEventListener("click", openPopupProfile);
+onOverlayClick();
+
+buttonEdit.addEventListener("click", openPopupProfile);
 
 profileCloseBtn.addEventListener("click", closePopupProfile);
 
@@ -173,21 +187,3 @@ addCardForm.addEventListener("submit", handleCardFormSubmit);
 
 clsPopImg.addEventListener("click", closeImgPopup);
 
-opnPopImg.addEventListener("click", (evt) => {
-  if (evt.target.classList.contains('popup_open-image') || evt.target.classList.contains('popup__close-button_image')) {
-    closeImgPopup();
-  }
-});
-
-addPopup.addEventListener("click", (evt) => {
-  if (evt.target.classList.contains('popup_add') || evt.target.classList.contains('popup__close-button_add')) {
-    closeAddPopup();
-  }
-});
-
-popupOverlay.addEventListener("click", (evt) => {
-  if (evt.target.classList.contains('popup') || evt.target.classList.contains('popup__close-button')) {
-    closePopupProfile();
-  }
-});
-  
