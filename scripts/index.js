@@ -35,18 +35,18 @@ const title = document.querySelector(".profile__title");
 const descriptionInput = document.querySelector(".popup__input_type_description");
 const description = document.querySelector(".profile__subtitle");
 
-const addButton = document.querySelector(".profile__add-button");
-const addPopup = document.querySelector(".popup_add");
+const buttonAdd = document.querySelector(".profile__add-button");
+const popupAdd = document.querySelector(".popup_add");
 const closePopupAdd = document.querySelector(".popup__close-button_add");
 const inputAdressName = document.querySelector(".popup__input_type_adress-name");
 const inputAdress = document.querySelector(".popup__input_type_adress");
-const addCardForm = document.querySelector(".popup__form_res");
+const cardFormAdd = document.querySelector(".popup__form_res");
 
 const initialCardsContainer = document.querySelector(".elements");
 const template = document.querySelector(".template");
 
-const opnPopImg = document.querySelector(".popup_open-image");
-const clsPopImg = document.querySelector(".popup__close-button_image");
+const popImgOpn = document.querySelector(".popup_open-image");
+const popImgCls = document.querySelector(".popup__close-button_image");
 const popImg = document.querySelector(".popup__image");
 const popSub = document.querySelector(".popup__subtitle");
 
@@ -77,7 +77,7 @@ function getElement(item) {
   
   function handleOpenImage(evt) {
     evt.preventDefault();
-    openPopup(opnPopImg);
+    openPopup(popImgOpn);
     popSub.textContent = elementTitle.textContent;
     popImg.src = elementUrl.src;
     popImg.alt = elementTitle.textContent;
@@ -140,20 +140,20 @@ function handleCardFormSubmit(e) {
 
   closeAddPopup();
   
-  addCardForm.reset();
+  cardFormAdd.reset();
 
 }
 
 function openAddPopup() {
-  openPopup(addPopup);
+  openPopup(popupAdd);
 }
 
 function closeAddPopup() {
-  closePopup(addPopup);
+  closePopup(popupAdd);
 }
 
 function closeImgPopup() {
-  closePopup(opnPopImg);
+  closePopup(popImgOpn);
 }
 
 const onOverlayClick = () => {
@@ -179,11 +179,11 @@ profileCloseBtn.addEventListener("click", closePopupProfile);
 
 profileForm.addEventListener("submit", handleProfileFormSubmit);
 
-addButton.addEventListener("click", openAddPopup);
+buttonAdd.addEventListener("click", openAddPopup);
 
 closePopupAdd.addEventListener("click", closeAddPopup);
 
-addCardForm.addEventListener("submit", handleCardFormSubmit);
+cardFormAdd.addEventListener("submit", handleCardFormSubmit);
 
-clsPopImg.addEventListener("click", closeImgPopup);
+popImgCls.addEventListener("click", closeImgPopup);
 
