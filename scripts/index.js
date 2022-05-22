@@ -1,3 +1,25 @@
+import Card from './card.js';
+import { FormValidator } from './formValidation.js';
+import { 
+  object,
+  buttonEdit,
+  popupProfile,
+  profileCloseBtn,
+  profileForm,
+  nameInput,
+  title,
+  descriptionInput,
+  description,
+  buttonAdd,
+  popupAdd,
+  closePopupAdd,
+  inputAdressName,
+  cardFormAdd,
+  initialCardsContainer,
+  popImgOpn,
+  popImgCls } from './constants.js';
+
+
 const initialCards = [
   {
     name: "Архыз",
@@ -25,76 +47,29 @@ const initialCards = [
   },
 ];
 
-const popupOverlay = document.querySelector(".popup");
-const buttonEdit = document.querySelector(".profile__edit-button");
-const popupProfile = document.querySelector(".popup_profile");
-const profileCloseBtn = document.querySelector(".popup__close-button");
-const profileForm = document.querySelector(".popup__form_profile");
-const nameInput = document.querySelector(".popup__input_type_name");
-const title = document.querySelector(".profile__title");
-const descriptionInput = document.querySelector(".popup__input_type_description");
-const description = document.querySelector(".profile__subtitle");
-
-const buttonAdd = document.querySelector(".profile__add-button");
-const popupAdd = document.querySelector(".popup_add");
-const closePopupAdd = document.querySelector(".popup__close-button_add");
-const inputAdressName = document.querySelector(".popup__input_type_adress-name");
-const inputAdress = document.querySelector(".popup__input_type_adress");
-const cardFormAdd = document.querySelector(".popup__form_res");
-
-const initialCardsContainer = document.querySelector(".elements");
-const template = document.querySelector(".template");
-
-const popImgOpn = document.querySelector(".popup_open-image");
-const popImgCls = document.querySelector(".popup__close-button_image");
-const popImg = document.querySelector(".popup__image");
-const popSub = document.querySelector(".popup__subtitle");
-
-
-
-function render() {
-  const html = initialCards.map(getElement);
-  initialCardsContainer.append(...html);
+function createCard(data) {
+  const card = new Card(data, '.template');
+  const cardElement = card.generateCard();
+  return cardElement;
 }
 
-function getElement(item) {
-  const getElementTemplate = template.content.cloneNode(true);
-  const elementTitle = getElementTemplate.querySelector(".element__title");
-  const elementUrl = getElementTemplate.querySelector(".element__image");
-  const elementTrash = getElementTemplate.querySelector(".element__trash");
-  const elementLike = getElementTemplate.querySelector(".element__like");
 
-  elementTrash.addEventListener("click", removeElement);
-
-  elementLike.addEventListener("click", handleLike);
-
-  elementUrl.addEventListener("click", handleOpenImage);
-
-  elementTitle.textContent = item.name;
-  elementUrl.alt = item.name;
-  elementUrl.src = item.link;
-
+initialCards.forEach((data) => {
+  const card = createCard(data);
   
-  function handleOpenImage(evt) {
-    evt.preventDefault();
-    openPopup(popImgOpn);
-    popSub.textContent = elementTitle.textContent;
-    popImg.src = elementUrl.src;
-    popImg.alt = elementTitle.textContent;
-  }
+  initialCardsContainer.append(card);
+});
 
-  return getElementTemplate;
+const addCard = (data) => {
+  const card = createCard(data);
+  initialCardsContainer.prepend(card);
 }
 
-function handleLike(e) {
-  const currentLike = e.target;
-  currentLike.classList.toggle("element__like_is-active");
-}
+const editProfileForm = new FormValidator(object, profileForm);
+editProfileForm.enableValidation();
 
-function removeElement(e) {
-  const currentButton = e.target;
-  currentButton.closest(".element").remove();
-}
+const newCardForm = new FormValidator(object, cardFormAdd);
+newCardForm.enableValidation();
 
 function handleEscUp(evt) {
   evt.preventDefault();
@@ -135,7 +110,7 @@ function handleProfileFormSubmit(e) {
 function handleCardFormSubmit(e) {
   e.preventDefault();
 
-  initialCardsContainer.prepend(getElement({ name: inputAdressName.value, link: inputAdress.value }));
+  addCard({ name: inputAdressName.value, link: inputAdress.value });
 
 
   closeAddPopup();
@@ -169,7 +144,6 @@ const onOverlayClick = () => {
 });
 }
 
-render();
 
 onOverlayClick();
 
@@ -187,3 +161,6 @@ cardFormAdd.addEventListener("submit", handleCardFormSubmit);
 
 popImgCls.addEventListener("click", closeImgPopup);
 
+
+
+export {handleEscUp}
