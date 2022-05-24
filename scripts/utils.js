@@ -1,4 +1,4 @@
-import { handleEscUp } from "./index.js";
+ import { handleEscUp } from "./index.js";
 const imageModalWindow = document.querySelector(".popup_open-image");
 const imageElement = document.querySelector(".popup__image");
 const imageCaption = document.querySelector(".popup__subtitle");
@@ -9,4 +9,4 @@ function openModalWindow(popup) {
 }
 
 
-export { imageModalWindow, imageElement, imageCaption, openModalWindow};
+export { imageModalWindow, imageElement, imageCaption, openModalWindow}; 

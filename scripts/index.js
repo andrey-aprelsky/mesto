@@ -1,5 +1,5 @@
-import Card from './card.js';
-import { FormValidator } from './formValidation.js';
+import Card from './Card.js';
+import { FormValidator } from './FormValidatior.js';
 import { 
   object,
   buttonEdit,
@@ -83,6 +83,7 @@ function handleEscUp(evt) {
 function openPopup(popup) {
   document.addEventListener('keyup', handleEscUp);
   popup.classList.add("popup_is-active");
+  
 }
 
 function closePopup(popup) {
@@ -94,6 +95,7 @@ function openPopupProfile() {
   openPopup(popupProfile);
   nameInput.value = title.textContent;
   descriptionInput.value = description.textContent;
+  editProfileForm.resetValidation();
 }
 
 function closePopupProfile() {
@@ -122,6 +124,7 @@ function handleCardFormSubmit(e) {
 
 function openAddPopup() {
   openPopup(popupAdd);
+  newCardForm.resetValidation();
 }
 
 function closeAddPopup() {
@@ -134,13 +137,12 @@ function closeImgPopup() {
 
 const onOverlayClick = () => {
   const popupList = Array.from(document.querySelectorAll('.popup'));
-
+  
   popupList.forEach((Element) => {
    Element.addEventListener('click', (evt) => {
     if (evt.target.classList.contains('popup') || evt.target.classList.contains('popup__close-button')) {
-      closePopup(evt.target)
-    }
-    
+      closePopup(Element)
+    } 
   });
 });
 }
@@ -148,19 +150,14 @@ const onOverlayClick = () => {
 
 onOverlayClick();
 
-buttonEdit.addEventListener("click", openPopupProfile);
 
-profileCloseBtn.addEventListener("click", closePopupProfile);
+buttonEdit.addEventListener("click", openPopupProfile);
 
 profileForm.addEventListener("submit", handleProfileFormSubmit);
 
 buttonAdd.addEventListener("click", openAddPopup);
 
-closePopupAdd.addEventListener("click", closeAddPopup);
-
 cardFormAdd.addEventListener("submit", handleCardFormSubmit);
-
-popImgCls.addEventListener("click", closeImgPopup);
 
 
 

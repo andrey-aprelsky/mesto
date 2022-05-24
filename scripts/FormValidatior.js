@@ -34,6 +34,17 @@ export class FormValidator {
     this.buttonElement.setAttribute('disabled', 'disabled')
   }
 
+  resetValidation() {
+    const inputList = Array.from(this._form.querySelectorAll(this._object.inputSelector));
+    this._toggleButtonState(); 
+
+    inputList.forEach((input) => {
+      this._hideInputError(this._form, input) 
+    });
+
+  }
+
+
   _toggleButtonState() {
     if (!this._form.checkValidity()) {
       this.buttonElement.classList.add(this._object.inactiveButtonClass);
