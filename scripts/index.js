@@ -4,7 +4,6 @@ import {
   object,
   buttonEdit,
   popupProfile,
-  profileCloseBtn,
   profileForm,
   nameInput,
   title,
@@ -12,13 +11,11 @@ import {
   description,
   buttonAdd,
   popupAdd,
-  closePopupAdd,
   inputAdressName,
   inputAdress,
   cardFormAdd,
   initialCardsContainer,
-  popImgOpn,
-  popImgCls } from './constants.js';
+   } from './constants.js';
 
 
 const initialCards = [
@@ -131,9 +128,7 @@ function closeAddPopup() {
   closePopup(popupAdd);
 }
 
-function closeImgPopup() {
-  closePopup(popImgOpn);
-}
+
 
 const onOverlayClick = () => {
   const popupList = Array.from(document.querySelectorAll('.popup'));
