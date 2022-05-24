@@ -1,4 +1,5 @@
-import { imageModalWindow, imageElement, imageCaption, openModalWindow} from './utils.js';
+import { imageModalWindow, imageElement, imageCaption} from './constants.js';
+import { openPopup } from './index.js ';
 export default class Card {
   constructor(data, cardSelector, handleCardClick) {
     this._title = data.name;
@@ -50,7 +51,7 @@ export default class Card {
     imageElement.alt = `Изображение ${this._alt}`;
     imageCaption.textContent = this._title;
   
-    openModalWindow(imageModalWindow);
+    openPopup(imageModalWindow);
   }
  
   _handleRemoveCard() {

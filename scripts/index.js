@@ -1,5 +1,5 @@
 import Card from './Card.js';
-import { FormValidator } from './FormValidatior.js';
+import { FormValidator } from './FormValidator.js';
 import { 
   object,
   buttonEdit,
@@ -77,7 +77,7 @@ function handleEscUp(evt) {
   }
 };
 
-function openPopup(popup) {
+export function openPopup(popup) {
   document.addEventListener('keyup', handleEscUp);
   popup.classList.add("popup_is-active");
   
@@ -106,6 +106,7 @@ function handleProfileFormSubmit(e) {
 
   closePopupProfile();
 }
+
 
 function handleCardFormSubmit(e) {
   e.preventDefault();

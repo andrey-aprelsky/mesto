@@ -27,3 +27,6 @@ export const initialCardsContainer = document.querySelector(".elements");
 
 export const popImgOpn = document.querySelector(".popup_open-image");
 export const popImgCls = document.querySelector(".popup__close-button_image");
+export const imageModalWindow = document.querySelector(".popup_open-image");
+export const imageElement = document.querySelector(".popup__image");
+export const imageCaption = document.querySelector(".popup__subtitle");

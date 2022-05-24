@@ -35,10 +35,9 @@ export class FormValidator {
   }
 
   resetValidation() {
-    const inputList = Array.from(this._form.querySelectorAll(this._object.inputSelector));
     this._toggleButtonState(); 
 
-    inputList.forEach((input) => {
+    this.inputList.forEach((input) => {
       this._hideInputError(this._form, input) 
     });
 
@@ -56,12 +55,12 @@ export class FormValidator {
   }
 
   _setEventListeners() {
-    const inputList = Array.from(this._form.querySelectorAll(this._object.inputSelector));
+    this.inputList = Array.from(this._form.querySelectorAll(this._object.inputSelector));
     this.buttonElement = this._form.querySelector(this._object.submitButtonSelector);
   
     this._toggleButtonState(this._form, this.buttonElemnt, this._object);
     
-    inputList.forEach((input) => {
+    this.inputList.forEach((input) => {
       input.addEventListener('input', () => {
         this._isValid(this._form, input, this._object);
   
