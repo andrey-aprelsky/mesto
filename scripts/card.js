@@ -6,7 +6,7 @@ export default class Card {
     this._image = data.link;
     this._alt = data.name;
     this._cardSelector = cardSelector;
-    this._template = document.querySelector('.template')
+    this._template = document.querySelector(this._cardSelector)
     this._handleCardClick = handleCardClick;
   }
 
